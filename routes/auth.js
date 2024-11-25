@@ -23,8 +23,10 @@ function verifyToken(req, res, next) {
     });
 }
 
-router.post('/auth/login',checkSchema(loginValidation),validateRequest,loginController)
+//the route for your login page. After you deploy this backend, it becomes https://your-site-url/api/auth/login
+router.post('/auth/login',checkSchema(loginValidation),validateRequest,loginController) 
 
+//the route for your signup page. After you deploy this backend, it becomes https://your-site-url/api/auth/signup
 router.post('/auth/signup',checkSchema(signupValidation),validateRequest,signupController)
 
 module.exports = router
