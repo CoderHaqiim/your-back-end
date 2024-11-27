@@ -17,17 +17,6 @@ const loginValidation = {
         notEmpty: {
             errorMessage: "Password is required and cannot be empty",
         },
-        isLength: {
-            options: {
-                min: 8, 
-                max: 64,
-            },
-            errorMessage: "Password must be between 8 and 64 characters long",
-        },
-        matches: {
-            options: [/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[\W_]).+$/],
-            errorMessage: "Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character",
-        },
         escape: true, 
         trim: true
     },

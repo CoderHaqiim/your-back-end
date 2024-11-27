@@ -46,7 +46,7 @@ const loginController = async(req,res)=>{
         const newUser = new User({username: username, email:email, password:hashedPassword})
         const user = await newUser.save();
 
-        res.status(201).json({message: 'new user created'})
+        res.status(201).json({message: 'your new account has been successfully created'})
     }
     catch(error){
         console.error(error);
