@@ -115,7 +115,7 @@ const taskValidation = {
     },
     priority: {
         isIn: {
-            options: [["low", "medium", "high"]],
+            options: [['low', 'medium', 'high']],
             errorMessage: "Priority must be one of 'low', 'medium', or 'high'",
         },
         optional: { options: { nullable: true } },
