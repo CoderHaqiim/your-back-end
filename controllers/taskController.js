@@ -6,7 +6,7 @@ const getAllTasks = async(req,res)=>{
         const tasks = await Tasks.find({userId}).select('_id title description status priority dueDate')
 
         if(!tasks) return res.status(404).json({message: "Couldn't retrieve any task"})
-        res.status(200).json({message:'successful', tasks})
+        res.status(200).json({message:'successfully retrieved tasks', tasks})
     }
     catch(error){
         console.error(error);
@@ -20,7 +20,7 @@ const createNewTask = async(req,res)=>{
         const newTask = new Tasks({...body, userId})
         const task = await newTask.save()
         const myTask = await Tasks.findById(task._id).select('title _id priority description status dueDate')
-        res.status(201).json({myTask})
+        res.status(201).json({message:"task succesfully created", myTask})
     }
     catch(error){
         console.error(error);

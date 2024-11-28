@@ -21,7 +21,7 @@ const loginController = async(req,res)=>{
  
          const token = jwt.sign({id:user._id} , SECRET ,{expiresIn:'12h'})
  
-         res.status(200).json({message:'login successful', token})
+         res.status(200).json({message:'login successful', username:user.username, token})
  
      }
     catch(error){
