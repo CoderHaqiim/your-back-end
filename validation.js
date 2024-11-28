@@ -114,17 +114,9 @@ const taskValidation = {
         },
     },
     priority: {
-        isIn: {
-            options: ['low', 'medium', 'high'],
-            errorMessage: "Priority must be one of 'low', 'medium', or 'high'",
-        },
         optional: { options: { nullable: true } },
     },
     status: {
-        isIn: {
-            options: ["pending", "in-progress", "cancelled","completed"],
-            errorMessage: "status must be one of 'pending', 'in-progress', 'cancelled' or 'completed'",
-        },
         optional: { options: { nullable: true } },
     },
 };
