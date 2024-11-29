@@ -14,12 +14,12 @@ function verifyToken(req, res, next) {
     }
 
     jwt.verify(token,SECRET, async (err, user) => {
-        if (err) return res.status(403).json({ message: 'Failed to authenticate token' });
+        if (err) return res.status(403).json({ message: 'Unauthorized. Go back to login' });
         const existingUser = await User.findById(user.id)
 
         if(!existingUser) return res.status(404).json({message:'user does not exist'})
         req.userId = user.id;
-        next();
+        next()
     });
 }
 
