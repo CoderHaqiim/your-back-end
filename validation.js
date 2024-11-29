@@ -4,6 +4,7 @@ const loginValidation = {
     email: {
         isString: true,
         isEmail: true,
+        errorMessage: "Email must be a valid email address",
         notEmpty: {
             errorMessage: "Email is required and cannot be empty",
         },
