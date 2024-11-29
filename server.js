@@ -21,7 +21,7 @@ connectDb()
 
 app.use((err,req,res,next)=>{
     if(err){
-        return res.status(400).send(`error: bad request format`)
+        return res.status(400).json({message:'error: bad request format'})
     }
     next()
 })
