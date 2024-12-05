@@ -9,11 +9,13 @@ const userRoute = require('./routes/user')
 const taskRoute = require('./routes/tasks')
 const authRoute = require('./routes/auth')
 
-app.use(cors({
-    origin: [process.env.FRONTEND], //replace with your domain
-    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-    allowedHeaders: ["Content-Type", "Authorization"]
-}));
+// app.use(cors({
+//     origin: [process.env.FRONTEND], //replace with your domain
+//     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+//     allowedHeaders: ["Content-Type", "Authorization"]
+// }));
+
+app.use(cors())
 
 app.use(express.json())
 
